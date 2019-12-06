@@ -48,10 +48,24 @@ namespace CustomList
             }
         }
 
-        public void Add()
+        public void Add(T item)
         {
-            CustomList<T> items = new CustomList<T>();
-            
+
+            if(count == capacity)
+            {
+                capacity *= 2;
+            }
+            T[] bucket = new T[count];
+            for (int i = 0; i < count; i++)
+            {
+                bucket[i] = items[i];
+            }
+            items = new T[capacity];
+            for (int i = 0; i < count; i++)
+            {
+                items[i] = bucket[i];
+            }
+            items[count] = item;
             count++;
         }
     }
