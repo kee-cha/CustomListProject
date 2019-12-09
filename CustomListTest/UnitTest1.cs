@@ -328,6 +328,95 @@ namespace CustomListTest
             Assert.AreEqual(expected2, actual2);
             Assert.AreEqual(expected3, actual3);
         }
+
+        [TestMethod]
+        public void Minus_SameNumberFromTwoList()
+        {
+            //Arrange
+            CustomList<int> items1 = new CustomList<int>() { 2, 5, 9 };
+            CustomList<int> items2 = new CustomList<int>() { 1, 5, 7 };
+            CustomList<int> items = new CustomList<int>();
+            int expected = 9;
+
+            //Act
+            items = items1 - items2;
+            int actual = items[1];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Minus_CheckListCountAfterSubstractOneNumber()
+        {
+            //Arrange
+            CustomList<int> items1 = new CustomList<int>() { 1, 6, 7, 9 };
+            CustomList<int> items2 = new CustomList<int>() { 2, 5, 7, 9 };
+            CustomList<int> items = new CustomList<int>();
+            int expected = 2;
+
+            //Act
+            items = items1 - items2;
+            int actual = items.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Minus_MultipleInstancesInListAreSubstracted()
+        {
+            //Arrange
+            CustomList<int> items1 = new CustomList<int>() { 1, 6, 7, 6 };
+            CustomList<int> items2 = new CustomList<int>() { 2, 6, 8, 9 };
+            CustomList<int> items = new CustomList<int>();
+            int expected = 6;
+
+            //Act
+            items = items1 - items2;
+            int actual = items[2];
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Minus_ListWithNoNumberSubstractAnotherList()
+        {
+            //Arrange
+            CustomList<int> items1 = new CustomList<int>();
+            CustomList<int> items2 = new CustomList<int>() { 2, 5, 7};
+            CustomList<int> items = new CustomList<int>();
+            int expected = 0;
+
+            //Act
+            items = items1 - items2;
+            int actual = items.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void Minus_CheckingIndexOfListAfterSubstractNumber()
+        {
+            //Arrange
+            CustomList<int> items1 = new CustomList<int>() { 1, 6, 7, 9 };
+            CustomList<int> items2 = new CustomList<int>() { 2, 5, 7, 9 };
+            CustomList<int> items = new CustomList<int>();
+
+            //Act
+            items = items1 - items2;
+            int actual = items[2];
+
+            //Assert
+
+        }
     }
 }
 
