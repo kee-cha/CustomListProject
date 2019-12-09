@@ -127,11 +127,17 @@ namespace CustomList
 
         //}
 
-        //public void ToString(T item)
-        //{
-        //    StringBuilder stringBuilder = new StringBuilder();
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            string result ="";
 
-        //}
+            for (int i = 0; i < count; i++)
+            {
+                result = sb.Append(items[i]) + "";
+            }
+            return result;
+        }
     }
 
 }

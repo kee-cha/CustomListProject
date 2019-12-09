@@ -202,47 +202,47 @@ namespace CustomListTest
             Assert.AreEqual(expected4,actual4);
         }
 
-        //[TestMethod]
-        //public void ToString_CheckToSeeIfOnePosisitiveNumberIsString()
-        //{
-        //    //Arrange
-        //    CustomList<int> items = new CustomList<int>() { 1 };
-        //    string expected = "1";
-        //    //Act
-        //    string actual = items.ToString();
-        //    //Assert
-        //    Assert.AreEqual(expected, actual); //Checking to see if integer is converted to string
-        //}
+        [TestMethod]
+        public void ToString_CheckToSeeIfOnePosisitiveNumberIsString()
+        {
+            //Arrange
+            CustomList<int> items = new CustomList<int>() { 1 };
+            string expected = "1";
+            //Act
+            string actual = items.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual); //Checking to see if integer is converted to string
+        }
 
-        //[TestMethod]
-        //public void ToString_CheckToSeeIfCountIsSameWhenConvertList()
-        //{
-        //    //Arrange
-        //    CustomList<string> items1 = new CustomList<string>() { "kee", "cha" };
-        //    int expected = 2;
+        [TestMethod]
+        public void ToString_CheckToSeeIfCountIsSameWhenConvertList()
+        {
+            //Arrange
+            CustomList<string> items1 = new CustomList<string>() { "kee", "cha" };
+            int expected = 2;
 
-        //    //Act
-        //    string items = items1.ToString();
-        //    int actual = items.Count;
+            //Act
+            items1.ToString();
+            int actual = items1.Count;
 
-        //    //Assert
-        //    Assert.AreEqual(expected, actual); //Checking to see if count remains the same after converting list to string
-        //}
+            //Assert
+            Assert.AreEqual(expected, actual); //Checking to see if count remains the same after converting list to string
+        }
 
-        //[TestMethod]
-        //public void ToString_ListWithNoElementsInside()
-        //{
-        //    //Arrange
-        //    CustomList<string> items = new CustomList<string>();
-        //    string expected = "";
+        [TestMethod]
+        public void ToString_ListWithNoElementsInside()
+        {
+            //Arrange
+            CustomList<string> items = new CustomList<string>();
+            string expected = "";
 
-        //    //Act
-        //    items.ToString();
-        //    string actual = items[0];
+            //Act
 
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            string actual = items.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
         //[TestMethod]
 
