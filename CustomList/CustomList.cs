@@ -138,6 +138,20 @@ namespace CustomList
             }
             return result;
         }
+
+        public static CustomList<T> operator+(CustomList<T> items1,CustomList<T> items2)
+        {
+            CustomList<T> items = new CustomList<T>();
+            for (int i = 0; i < items1.count; i++)
+            {
+                items.Add(items1[i]);
+            }
+            for (int i = 0; i < items2.count; i++)
+            {
+                items.Add(items2[i]);
+            }
+            return items;
+        }
     }
 
 }

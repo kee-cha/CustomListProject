@@ -244,89 +244,90 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
         }
 
-        //[TestMethod]
+        [TestMethod]
 
-        //public void Plus_OneListToAnotherList()
-        //{
-        //    //Arrange
-        //    CustomList<string> items1 = new CustomList<string>() { "kee", "cha" };
-        //    CustomList<string> items2 = new CustomList<string>() { "houa", "Cha" };
-        //    CustomList<string> items = new CustomList<string>();
-        //    string expected = "cha";
-        //    string expected1 = "houa";
-
-
-        //    //Act
-        //    items = items1 + items2;
-        //    string actual1 = items[1];
-        //    string actual2 = items[2];
+        public void Plus_OneListToAnotherList()
+        {
+            //Arrange
+            CustomList<string> items1 = new CustomList<string>() { "kee", "cha" };
+            CustomList<string> items2 = new CustomList<string>() { "houa", "Cha" };
+            CustomList<string> items = new CustomList<string>();
+            string expected = "cha";
+            string expected1 = "houa";
 
 
-        //    //Assert
+            //Act
+            items = items1 + items2;
+            string actual1 = items[1];
+            string actual2 = items[2];
 
-        //    Assert.AreEqual(expected, actual1); 
-        //    Assert.AreEqual(expected1, actual2);
 
-        //}
+            //Assert
 
-        //[TestMethod]
-        //public void Plus_CheckTotalCountOfNewList()
-        //{
-        //    {
-        //        //Arrange
-        //        CustomList<string> items1 = new CustomList<string>() { "kee", "cha" };
-        //        CustomList<string> items2 = new CustomList<string>() { "houa", "Cha" };
-        //        CustomList<string> items = new CustomList<string>();
-        //        int expected = 4;
+            Assert.AreEqual(expected, actual1);
+            Assert.AreEqual(expected1, actual2);
 
-        //        //Act
-        //        items = items1 + items2;
-        //        int actual = items.Count;
+        }
 
-        //        //Assert
-        //        Assert.AreEqual(expected, actual);
-        //    }
-        //}
-        //[TestMethod]
-        //[ExpectedException(typeof(IndexOutOfRangeException))]
-        //public void Plus_CheckToSeeIfIndexDoesNotExist()
-        //{
-        //    //Arrange
-        //    CustomList<string> items1 = new CustomList<string>() { "kee", "cha" };
-        //    CustomList<string> items2 = new CustomList<string>() { "houa", "Cha" };
-        //    CustomList<string> items = new CustomList<string>();
+        [TestMethod]
+        public void Plus_CheckTotalCountOfNewList()
+        {
+            {
+                //Arrange
+                CustomList<string> items1 = new CustomList<string>() { "kee", "cha" };
+                CustomList<string> items2 = new CustomList<string>() { "houa", "Cha" };
+                CustomList<string> items = new CustomList<string>();
+                int expected = 4;
 
-        //    //Act
-        //    items = items1 + items2;
-        //    string actual = items[4];
+                //Act
+                items = items1 + items2;
+                int actual = items.Count;
 
-        //    //Assert
-        //}
+                //Assert
+                Assert.AreEqual(expected, actual);
+            }
+        }
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void Plus_CheckToSeeIfIndexDoesNotExist()
+        {
+            //Arrange
+            CustomList<string> items1 = new CustomList<string>() { "kee", "cha" };
+            CustomList<string> items2 = new CustomList<string>() { "houa", "Cha" };
+            CustomList<string> items = new CustomList<string>();
 
-        //[TestMethod]
-        //public void Plus_CheckOrderOfCombineList()
-        //{
-        //    //Arrange
-        //    CustomList<string> items1 = new CustomList<string>() { "kee", "cha" };
-        //    CustomList<string> items2 = new CustomList<string>() { "houa", "Cha" };
-        //    CustomList<string> items = new CustomList<string>();
-        //    string expected = "kee";
-        //    string expected1 = "cha";
-        //    string expected2 = "houa";
-        //    string expected3 = "Cha";
+            //Act
+            items = items1 + items2;
+            string actual = items[4];
 
-        //    //Act
-        //    items = items1 + items2;
-        //    string actual = items[0];
-        //    string actual1 = items[1];
-        //    string actual2 = items[2];
-        //    string actual3 = items[3];
+            //Assert
+        }
 
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //    Assert.AreEqual(expected1, actual1);
-        //    Assert.AreEqual(expected2, actual2);
-        //    Assert.AreEqual(expected3, actual3);
-        //}
+        [TestMethod]
+        public void Plus_CheckOrderOfCombineList()
+        {
+            //Arrange
+            CustomList<string> items1 = new CustomList<string>() { "kee", "cha" };
+            CustomList<string> items2 = new CustomList<string>() { "houa", "Cha" };
+            CustomList<string> items = new CustomList<string>();
+            string expected = "kee";
+            string expected1 = "cha";
+            string expected2 = "houa";
+            string expected3 = "Cha";
+
+            //Act
+            items = items1 + items2;
+            string actual = items[0];
+            string actual1 = items[1];
+            string actual2 = items[2];
+            string actual3 = items[3];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected1, actual1);
+            Assert.AreEqual(expected2, actual2);
+            Assert.AreEqual(expected3, actual3);
+        }
     }
 }
+
