@@ -378,13 +378,13 @@ namespace CustomListTest
         public void Minus_CheckingIndexOfListAfterSubstractNumber()
         {
             //Arrange
-            CustomList<int> items1 = new CustomList<int>() { 1, 6, 7, 9 };
-            CustomList<int> items2 = new CustomList<int>() { 2, 5, 6, 9 };
-            CustomList<int> items = new CustomList<int>();
+            CustomList<int> items = new CustomList<int>() { 1, 6, 7, 9 };
+            CustomList<int> items1 = new CustomList<int>() { 2, 5, 6, 9 };
+            CustomList<int> items2 = new CustomList<int>();
             int expected = 0;
 
             //Act
-            items = items1 - items2;
+            items2 = items - items1;
             int actual = items[2];
 
             //Assert

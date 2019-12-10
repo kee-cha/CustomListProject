@@ -161,6 +161,41 @@ namespace CustomList
             }
             return items;
         }
-    }
 
+        public CustomList<T> Zip(CustomList<T> items1)
+        {
+            CustomList<T> temp = new CustomList<T>();
+            int counter;
+            if (items1.count > count)
+            {
+                counter = items1.count;
+            }
+            else if (items1.count < count)
+            {
+                counter = count;
+            }
+            else
+            {
+                counter = count;
+            }
+            for (int i = 0; i < counter; i++)
+            {
+
+                if (items1.count < count && i >= items1.count)
+                {
+                    temp.Add(items[i]);
+                }
+                else if (count < items1.count && i >= count)
+                {
+                    temp.Add(items1[i]);
+                }
+                else
+                {
+                    temp.Add(items[i]);
+                    temp.Add(items1[i]);
+                }
+            }
+            return temp;
+        }
+    }
 }
