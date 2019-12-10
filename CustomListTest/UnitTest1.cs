@@ -413,14 +413,14 @@ namespace CustomListTest
         public void Zip_CheckCountOFListAfterZip()
         {
             //Arrange
-            CustomList<int> items1 = new CustomList<int>() { 1, 2, 3, 4 };
-            CustomList<int> items2 = new CustomList<int>() { 5, 6, 7, 8 };
-            CustomList<int> items = new CustomList<int>();
+            CustomList<int> items = new CustomList<int>() { 1, 2, 3, 4 };
+            CustomList<int> items1 = new CustomList<int>() { 5, 6, 7, 8 };
+            CustomList<int> items2 = new CustomList<int>();
             int expected = 8;
 
             //Act
-            items = items1.Zip(items2);
-            int actual = items.Count;
+            items2 = items.Zip(items1);
+            int actual = items2.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -446,14 +446,14 @@ namespace CustomListTest
         public void Zip_CheckCapacityOfNewListWhenZipTwoList()
         {
             //Arrange
-            CustomList<int> items1 = new CustomList<int>() { 1, 2 };
-            CustomList<int> items2 = new CustomList<int>() { 2, 3, 4, };
-            CustomList<int> items = new CustomList<int>();
+            CustomList<int> items = new CustomList<int>() { 1, 2 };
+            CustomList<int> items1 = new CustomList<int>() { 2, 3, 4, };
+            CustomList<int> items2 = new CustomList<int>();
             int expected = 8;
 
             //Act
-            items = items1.Zip(items2);
-            int actual = items.Capacity;
+            items2 = items.Zip(items1);
+            int actual = items2.Capacity;
 
             //Assert
             Assert.AreEqual(expected, actual);

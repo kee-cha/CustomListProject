@@ -120,22 +120,7 @@ namespace CustomList
                 items[k] = bucket[k];
             }
         }
-
-        public static CustomList<T> operator -(CustomList<T> items1, CustomList<T> items2)
-        {
-            CustomList<T> items = new CustomList<T>();
-            for (int i = 0; i < items2.count; i++)
-            {
-                items1.Remove(items2[i]);
-
-            }
-            for (int i = 0; i < items1.count; i++)
-            {
-                items.Add(items1[i]);
-            }
-            return items;
-        }
-
+               
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -158,6 +143,21 @@ namespace CustomList
             for (int i = 0; i < items2.count; i++)
             {
                 items.Add(items2[i]);
+            }
+            return items;
+        }
+
+        public static CustomList<T> operator -(CustomList<T> items1, CustomList<T> items2)
+        {
+            CustomList<T> items = new CustomList<T>();
+            for (int i = 0; i < items2.count; i++)
+            {
+                items1.Remove(items2[i]);
+
+            }
+            for (int i = 0; i < items1.count; i++)
+            {
+                items.Add(items1[i]);
             }
             return items;
         }
