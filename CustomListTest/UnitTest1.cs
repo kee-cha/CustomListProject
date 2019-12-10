@@ -161,7 +161,7 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        [ExpectedException(typeof(IndexOutOfRangeException))]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Remove_CheckToSeeIfLastNumberRemoveIfIndexExist()
         {
             //Arrange
@@ -288,7 +288,7 @@ namespace CustomListTest
             }
         }
         [TestMethod]
-        [ExpectedException(typeof(IndexOutOfRangeException))]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Plus_CheckToSeeIfIndexDoesNotExist()
         {
             //Arrange
@@ -402,13 +402,14 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        [ExpectedException(typeof(IndexOutOfRangeException))]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Minus_CheckingIndexOfListAfterSubstractNumber()
         {
             //Arrange
             CustomList<int> items1 = new CustomList<int>() { 1, 6, 7, 9 };
             CustomList<int> items2 = new CustomList<int>() { 2, 5, 7, 9 };
             CustomList<int> items = new CustomList<int>();
+            int expected = 0;
 
             //Act
             items = items1 - items2;

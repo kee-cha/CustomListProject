@@ -33,12 +33,25 @@ namespace CustomList
         {
             get
             {
-                return items[index];
-
+                if (index >= 0 && index < count)
+                {
+                    return items[index];
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
             }
             set
             {
-                items[index] = value;
+                if (index < count && index >= 0)
+                {
+                    items[index] = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
             }
 
         }
@@ -108,29 +121,25 @@ namespace CustomList
             }
         }
 
-        //public void RemoveAll(T item)//this does remove all also
-        //{
-        //    T[] bucket = new T[count];
-        //    int j = 0;
-        //    for (int i = 0; i < count; i++)
-        //    {
-        //        if (item.Equals(items[i]))
-        //        { 
-        //            count--;
-        //        }
-        //        else
-        //        {
-        //            bucket[j] = items[i];
-        //            j++;
-        //        }
-        //    }
+        public static CustomList<T> operator -(CustomList<T> items1, CustomList<T> items2)
+        {
+            CustomList<T> items = new CustomList<T>();
+            for (int i = 0; i < items2.count; i++)
+            {
+                items1.Remove(items2[i]);
 
-        //}
+            }
+            for (int i = 0; i < items1.count; i++)
+            {
+                items.Add(items1[i]);
+            }
+            return items;
+        }
 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            string result ="";
+            string result = "";
 
             for (int i = 0; i < count; i++)
             {
@@ -139,7 +148,7 @@ namespace CustomList
             return result;
         }
 
-        public static CustomList<T> operator+(CustomList<T> items1,CustomList<T> items2)
+        public static CustomList<T> operator +(CustomList<T> items1, CustomList<T> items2)
         {
             CustomList<T> items = new CustomList<T>();
             for (int i = 0; i < items1.count; i++)
