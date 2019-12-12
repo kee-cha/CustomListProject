@@ -349,8 +349,7 @@ namespace CustomListTest
             //Act
             items = items1 - items2;
             int actual = items[2];
-
-
+            
             //Assert
             Assert.AreEqual(expected, actual);
 
@@ -385,7 +384,7 @@ namespace CustomListTest
 
             //Act
             items2 = items - items1;
-            int actual = items[2];
+            int actual = items2[2];
 
             //Assert
 

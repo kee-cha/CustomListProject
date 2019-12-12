@@ -149,15 +149,16 @@ namespace CustomList
 
         public static CustomList<T> operator -(CustomList<T> items1, CustomList<T> items2)
         {
-            CustomList<T> items = new CustomList<T>();
-            for (int i = 0; i < items2.count; i++)
-            {
-                items1.Remove(items2[i]);
-
-            }
+            CustomList<T> tempList = new CustomList<T>();
+            CustomList<T> items = new CustomList<T>();            
             for (int i = 0; i < items1.count; i++)
             {
-                items.Add(items1[i]);
+                tempList.Add(items1[i]);
+            }
+            items = tempList;
+            for (int i = 0; i < items2.count; i++)
+            {                
+                tempList.Remove(items2[i]);
             }
             return items;
         }
